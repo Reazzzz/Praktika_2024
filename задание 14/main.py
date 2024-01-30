@@ -5,8 +5,8 @@ from translate import Translator #переводим запрос с русск�
 from PIL import Image # преобразование ссылки в картинку
 import io
 # апи коючи + ссылка
-API_AI = "A2pKGNP55EaqTxCynw69ZQnvHmGPhKhDj3mBrLcfoyXDjZZ2tqBsqecHGvF2"  # Ваш API-ключ для взаимодействия с ИИ
-API_bot = "6388606159:AAHbK4YUb-PX8u4fufQs9so8TQLcJ3FRVX8"  # Ваш API-ключ для бота Telegram
+API_AI = "A2pKGNP55EaqTxCynw69ZQnvHmGPhKhDj3mBrLcfoyXDjZZ2tqBsqecHGvF2"  #  ИИ
+API_bot = "6388606159:AAHbK4YUb-PX8u4fufQs9so8TQLcJ3FRVX8"  #для бота 
 url = "https://stablediffusionapi.com/api/v3/text2img"
 bot = TeleBot(API_bot)
 
@@ -14,12 +14,12 @@ bot = TeleBot(API_bot)
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.send_message(message.chat.id,
-                     'Привет! Для того чтобы создать картинку воспользуйтесь командой /draw "Тут пишите запрос"')
+                     'Привет! Для того чтобы создать картинку воспользуйтесь командой /draw "Тут пиши запрос"')
 
 # ответ на команду /draw
 @bot.message_handler(commands=['draw'])
 def draw(message):
-    bot.send_message(message.chat.id, "Придется чуть-чуть подождать, я думаю...")
+    bot.send_message(message.chat.id, "чуть-чуть жди, я думаю...")
     #срез запроса
     mess_text = message.text[6:]
     print(mess_text)
